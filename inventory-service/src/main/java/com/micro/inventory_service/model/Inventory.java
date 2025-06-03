@@ -10,17 +10,16 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String skuCode;  // Unique product code
-
     @Column(nullable = false)
+    private String productCode;  // Unique product code
+
     private Integer quantity;
 
     // Constructors
     public Inventory() {}
 
-    public Inventory(String skuCode, Integer quantity) {
-        this.skuCode = skuCode;
+    public Inventory(String productCode, Integer quantity) {
+        this.productCode = productCode;
         this.quantity = quantity;
     }
 
@@ -28,8 +27,8 @@ public class Inventory {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public String getSkuCode() { return skuCode; }
-    public void setSkuCode(String skuCode) { this.skuCode = skuCode; }
+    public String getProductCode() { return productCode; }
+    public void setProductCode(String productCode) { this.productCode = productCode; }
 
     public Integer getQuantity() { return quantity; }
     public void setQuantity(Integer quantity) { this.quantity = quantity; }

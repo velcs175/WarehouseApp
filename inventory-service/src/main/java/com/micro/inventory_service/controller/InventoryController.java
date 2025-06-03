@@ -25,9 +25,9 @@ public class InventoryController {
         return inventoryService.isStockAvailable(productCode, quantity);
     }
 
-    @GetMapping("/{skuCode}")
-    public Optional<Inventory> getInventoryBySkuCode(@PathVariable String skuCode) {
-        return inventoryService.getInventoryBySkuCode(skuCode);
+    @GetMapping("/{productCode}")
+    public Optional<Inventory> getInventoryByProductCode(@PathVariable String productCode) {
+        return inventoryService.getInventoryByProductCode(productCode);
     }
 
     @PostMapping

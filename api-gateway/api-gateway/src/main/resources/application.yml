@@ -16,6 +16,10 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/orders/**
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payments/**
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -34,3 +38,19 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: true
+
+springdoc:
+    swagger-ui:
+        use-root-path: true
+        urls:
+            - name: USER-SERVICE
+              url: /user-service/v3/api-docs
+            - name: INVENTORY-SERVICE
+              url: /inventory-service/v3/api-docs
+            - name: ORDER-SERVICE
+              url: /order-service/v3/api-docs
+            - name: PAYMENT-SERVICE
+              url: /payment-service/v3/api-docs
+    api-docs:
+        enabled: true
+        path: /v3/api-docs

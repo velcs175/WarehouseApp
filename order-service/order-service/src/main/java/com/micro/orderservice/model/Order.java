@@ -22,5 +22,5 @@ public class Order {
     private Double totalPrice;
     private String status;  // PENDING, COMPLETED, FAILED
 
-    private LocalDateTime orderDate = LocalDateTime.now();
+    private LocalDateTime orderDate;
 }

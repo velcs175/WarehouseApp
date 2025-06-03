@@ -21,13 +21,13 @@ public class InventoryService {
     
     @Transactional(readOnly = true)
     public boolean isStockAvailable(String productCode, int quantity) {
-        return inventoryRepository.findBySkuCode(productCode)
+        return inventoryRepository.findByProductCode(productCode)
                 .map(inventory -> inventory.getQuantity() >= quantity)
                 .orElse(false);
     }
 
-    public Optional<Inventory> getInventoryBySkuCode(String skuCode) {
-        return inventoryRepository.findBySkuCode(skuCode);
+    public Optional<Inventory> getInventoryByProductCode(String productCode) {
+        return inventoryRepository.findByProductCode(productCode);
     }
 
     public Inventory saveInventory(Inventory inventory) {
